@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     else
       @prototype = @comment.prototype
       #@commnents = @prototype.text
+      @comments = @prototype.comments.includes(:user)
       render "/prototypes/show"
     end
   end
